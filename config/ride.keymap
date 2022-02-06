@@ -76,7 +76,7 @@
 			bindings = <
 	&kp F12 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                           &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
 	&kp LSHFT &kp A &kp S &kp D &kp F &kp G                                              &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp SEMI &kp SQT
-	&kp TAB &kp Z &kp X &kp C &kp V &kp B                                                  &kp N &kp M  &kp COMMA &kp DOT &kp BSLH &kp RCTRL
+	&kp TAB &kp Z &kp X &kp C &kp V &kp B                                                &kp N &kp M  &kp COMMA &kp DOT &kp BSLH &kp RCTRL
 	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &kp SPACE  &mo LOWER &kp RALT
 			>;
 		};

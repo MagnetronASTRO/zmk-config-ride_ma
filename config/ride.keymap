@@ -93,6 +93,6 @@
 	&kp TAB &kp Z &kp X &kp C &kp V &kp B                                                &kp UNDER &kp PLUS &kp LBKT &kp RBKT &kp BSLH &kp RCTRL
 	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &kp SPACE  &mo LOWER &kp RALT
 			>;
-		}
+		};
 	};
 };

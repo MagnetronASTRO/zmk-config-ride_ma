@@ -56,8 +56,8 @@
 		default_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   | BSCP |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |                                          |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+// | SHIFT |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
+// | TAB   |  Z  |  X  |  C   |  V   |  B   |                                          |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE  | LOWER  | RALT  |
 			bindings = <
 	&kp ESC   &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
@@ -70,8 +70,8 @@
    rise_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  1  |  2  |  3   |  4   |  5   |                                          |  6   |  7    |  8    |  9   |   10  | BSCP |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                                          | LEFT | DOWN  |  UP   | RIGHT|   ;   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |                                          |  N   |  M    |  ,    |  .   |   \   | CTRL |
+// | SHIFT |  A  |  S  |  D   |  F   |  G   |                                          | LEFT | DOWN  |  UP   | RIGHT|   ;   |   '  |
+// | TAB  |  Z  |  X  |  C   |  V   |  B   |                                          |  N   |  M    |  ,    |  .   |   \   | CTRL |
 //                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE  | LOWER  | RALT  |
 			bindings = <
 	&kp ESC   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                                           &kp N6 &kp N7 &kp N8 &kp N9 &kp N9 &kp BSPC
@@ -84,8 +84,8 @@
    lower_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  !  |  @  |  #   |  $   |  %   |                                          |  ^   |  &    |  *    |  (   |   )   | BSCP |
-// |  TAB  |  A  |  S  |  D   |  F   |CAPSLOCK|                                        |  -   |  =    |  {    |  }   |   |   |   '  |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |                                          |  _   |  +    |  [    |  ]   |   \   | CTRL |
+// | SHIFT |  A  |  S  |  D   |  F   |CAPSLOCK|                                        |  -   |  =    |  {    |  }   |   |   |   '  |
+// | TAB  |  Z  |  X  |  C   |  V   |  B   |                                          |  _   |  +    |  [    |  ]   |   \   | CTRL |
 //                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE  | LOWER  | RALT  |
 			bindings = <
 	&kp ESC &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT                                  &kp CERET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC

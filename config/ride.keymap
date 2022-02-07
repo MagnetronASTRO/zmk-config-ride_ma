@@ -6,11 +6,14 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define CONFIG_ZMK_RGB_UNDERGLOW_HUE_START 168
 #define DEFAULT 0
 #define RISE 1
 #define LOWER 2
+#define NAVI 3
 
 /*
  * Temporarily here because nice nano v2 spi is not defined on ZMk Yet
@@ -52,6 +55,10 @@
 / {
 	keymap {
 		compatible = "zmk,keymap";
+		tri_layer {
+				if-layers = <1 2>;
+				then-layer = <3>;
+		};
 
 		default_layer {
 // ----------------------------------------------------------------------------------------------------------------------------------
@@ -92,6 +99,20 @@
 	&kp LSHFT &kp A &kp S &kp D &kp F &kp CAPSLOCK                                       &kp MINUS &kp EQUAL &kp LBRC &kp RBRC &kp PIPE &kp SQT
 	&kp TAB &kp Z &kp X &kp C &kp V &kp B                                                &kp UNDER &kp PLUS &kp LBKT &kp RBKT &kp BSLH &kp RCTRL
 	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &kp SPACE  &mo LOWER &kp RALT
+			>;
+		};
+
+			navi {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |  ---  |  !  |  @  |  #   |  $   |  %   |                                          |  ^   |  &    |  *    |  (   |   )   | BSCP |
+// | SHIFT |  A  |  S  |  D   |  F   |CAPSLOCK|                                        |  -   |  =    |  {    |  }   |   |   |   '  |
+// | TAB  |  Z  |  X  |  C   |  V   |  B   |                                          |  _   |  +    |  [    |  ]   |   \   | CTRL |s
+//                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE  | LOWER  | RALT  |
+			bindings = <
+	&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &out OUT_TOG                            &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans                                  &trans &kp K_PREV &kp K_PP &kp K_NEXT &trans &trans
+	                         &trans &mo RISE &trans &trans       &trans  &trans  &mo LOWER &trans
 			>;
 		};
 	};

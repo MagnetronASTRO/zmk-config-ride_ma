@@ -108,14 +108,14 @@
 
 			navi_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  ---  |  !  |  @  |  #   |  $   |  %   |                                          |  ^   |  &    |  *    |  (   |   )   | BSCP |
-// | SHIFT |  A  |  S  |  D   |  F   |CAPSLOCK|                                        |  -   |  =    |  {    |  }   |   |   |   '  |
-// | TAB  |  Z  |  X  |  C   |  V   |  B   |                                          |  _   |  +    |  [    |  ]   |   \   | CTRL |s
+// | --- |BT_D1 |BT_D2 |BT_D3 |BT_D4 |BT_D5 |                                          | --- | --- | --- | --- | --- | --- | --- |
+// | --- | --- | --- | --- | BT_clear | out_toggle |                               		| --- | --- | --- | --- | --- | --- | --- |
+// | --- | --- | --- | ---  | ---  |  --- |                                      | --- | previous | play/pause | next | --- | --- | --- |
 //                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE  | LOWER  | RALT  |
 			bindings = <
 	&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans &trans &out OUT_TOG                            &trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans &trans &trans                                  &trans &kp K_PREV &kp K_PP &kp K_NEXT &trans &trans
+	&trans &trans &trans &trans &bt BT_CLR &out OUT_TOG                        &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans                                  &trans &kp C_PREV &kp C_PP &kp C_NEXT &trans &trans
 	                         &trans &mo RISE &trans &trans       &trans  &trans  &mo LOWER &trans
 			>;
 		};

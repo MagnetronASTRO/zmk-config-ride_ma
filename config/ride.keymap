@@ -110,7 +110,7 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // | --- |BT_D1 |BT_D2 |BT_D3 |BT_D4 |BT_D5 |                                          | F1  | F2  | F3  | F4  | F5 | F6 |
 // | --- | --- | --- | --- | BT_clear | out_toggle |                               		| F7  | F8 | F9 | F10 | F11 | F12 |
-// | --- | --- | --- | ---  | ---  |  --- |                                      | --- | previous | play/pause | next | --- | --- |
+// | --- | --- | --- | ---  | ---  |  --- |                                      | --- | previous | play/pause | next | --- | ---|
 //                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE  | LOWER  | RALT  |
 			bindings = <
 	&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6

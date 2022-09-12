@@ -24,34 +24,34 @@
  * src: https://github.com/Ardakilic/zmk-config/commit/ae2c7b4d7c2b68e432ab487c12a842d89113be9c
  */
 
-// &spi1 {
-//    compatible = "nordic,nrf-spim";
-//    status = "okay";
-//    mosi-pin = <6>;
-//    // Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
-//    sck-pin = <5>;
-//    miso-pin = <7>;
+&spi1 {
+   compatible = "nordic,nrf-spim";
+   status = "okay";
+   mosi-pin = <6>;
+   // Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
+   sck-pin = <5>;
+   miso-pin = <7>;
 
-//    led_strip: ws2812@0 {
-//       compatible = "worldsemi,ws2812-spi";
-//       label = "WS2812";
+   led_strip: ws2812@0 {
+      compatible = "worldsemi,ws2812-spi";
+      label = "WS2812";
 
-//       /* SPI */
-//       reg = <0>; /* ignored, but necessary for SPI bindings */
-//       spi-max-frequency = <4000000>;
+      /* SPI */
+      reg = <0>; /* ignored, but necessary for SPI bindings */
+      spi-max-frequency = <4000000>;
 
-//       /* WS2812 */
-//       chain-length = <22>; /* arbitrary; change at will */
-//       spi-one-frame = <0x70>;
-//       spi-zero-frame = <0x40>;
-//    };
-// };
+      /* WS2812 */
+      chain-length = <22>; /* arbitrary; change at will */
+      spi-one-frame = <0x70>;
+      spi-zero-frame = <0x40>;
+   };
+};
 
-// / {
-//    chosen {
-//       zmk,underglow = &led_strip;
-//    };
-// };
+/ {
+   chosen {
+      zmk,underglow = &led_strip;
+   };
+};
 
 
 / {
@@ -76,20 +76,6 @@
 	&kp ESC &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I &kp O &kp P &kp BSPC
 	&kp LSHFT &kp A &kp S &kp D &kp F &kp G                                              &kp H &kp J  &kp K &kp L &kp SEMI &kp SQT
 	&kp TAB &kp Z &kp X &kp C &kp V &kp B                                                &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
-	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
-			>;
-		};
-
-		colemak_dh {
-// ----------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  F   |  P   |  B   |                                          |  J   |  L    |  U    |  Y   |   ;   | BSCP |
-// | SHIFT |  A  |  R  |  S   |  T   |  G   |                                          |  M   |  N    |  E    |  I   |   O   |   '  |
-// | TAB   |  Z  |  X  |  C   |  D   |  V   |                                          |  K   |  H    |  ,    |  .   |   /   | SHIFT |
-//                          | LCTRL  | RISE  |  SPACE/LALT  |   ENTER   |   |   ESC  |  SPACE  | LOWER  | RALT  |
-			bindings = <
-	&kp ESC &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U &kp Y &kp SEMI &kp BSPC
-	&kp LSHFT &kp A &kp R &kp S &kp T &kp G                                              &kp M &kp N  &kp E &kp I &kp O &kp SQT
-	&kp TAB &kp Z &kp X &kp C &kp D &kp V                                                &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
 	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
 			>;
 		};
@@ -133,6 +119,20 @@
 	&trans &trans &tog DEFAULT &tog COLEMAK_DH &bt BT_CLR &out OUT_TOG                        &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
 	&trans &trans &trans &trans &trans &trans                                  &trans &kp C_PREV &kp C_PP &kp C_NEXT &trans &trans
 	                         &trans &mo RISE &trans &trans       &trans  &trans  &mo LOWER &trans
+			>;
+		};
+
+		colemak_dh {
+// ----------------------------------------------------------------------------------------------------------------------------------
+// |  ESC  |  Q  |  W  |  F   |  P   |  B   |                                          |  J   |  L    |  U    |  Y   |   ;   | BSCP |
+// | SHIFT |  A  |  R  |  S   |  T   |  G   |                                          |  M   |  N    |  E    |  I   |   O   |   '  |
+// | TAB   |  Z  |  X  |  C   |  D   |  V   |                                          |  K   |  H    |  ,    |  .   |   /   | SHIFT |
+//                          | LCTRL  | RISE  |  SPACE/LALT  |   ENTER   |   |   ESC  |  SPACE  | LOWER  | RALT  |
+			bindings = <
+	&kp ESC &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U &kp Y &kp SEMI &kp BSPC
+	&kp LSHFT &kp A &kp R &kp S &kp T &kp G                                              &kp M &kp N  &kp E &kp I &kp O &kp SQT
+	&kp TAB &kp Z &kp X &kp C &kp D &kp V                                                &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
+	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
 			>;
 		};
 	};

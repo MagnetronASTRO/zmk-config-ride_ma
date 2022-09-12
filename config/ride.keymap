@@ -119,5 +119,20 @@
 	                         &trans &mo RISE &trans &trans       &trans  &trans  &mo LOWER &trans
 			>;
 		};
+
+		
+		default_colemak_dh {
+// ----------------------------------------------------------------------------------------------------------------------------------
+// |  ESC  |  Q  |  W  |  F   |  P   |  B   |                                          |  J   |  L    |  U    |  Y   |   ;   | BSCP |
+// | SHIFT |  A  |  R  |  S   |  T   |  G   |                                          |  M   |  N    |  E    |  I   |   O   |   '  |
+// | TAB   |  Z  |  X  |  C   |  D   |  V   |                                          |  K   |  H    |  ,    |  .   |   /   | SHIFT |
+//                          | LCTRL  | RISE  |  SPACE/LALT  |   ENTER   |   |   ESC  |  SPACE  | LOWER  | RALT  |
+			bindings = <
+	&kp ESC &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U &kp Y &kp SEMI &kp BSPC
+	&kp LSHFT &kp A &kp R &kp S &kp T &kp G                                              &kp M &kp N  &kp E &kp I &kp O &kp SQT
+	&kp TAB &kp Z &kp X &kp C &kp D &kp V                                                &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
+	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
+			>;
+		};
 	};
 };

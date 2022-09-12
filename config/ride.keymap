@@ -11,10 +11,11 @@
 
 #define CONFIG_ZMK_RGB_UNDERGLOW_HUE_START 168
 #define DEFAULT 0
-#define COLEMAK_DH 1
-#define RISE 2
-#define LOWER 3
-#define NAVI 4
+#define RISE 1
+#define LOWER 2
+#define NAVI 3
+#define COLEMAK_DH 4
+
 
 /*
  * Temporarily here because nice nano v2 spi is not defined on ZMk Yet
@@ -57,8 +58,8 @@
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
 		tri_layer {
-			if-layers = <2 3>;
-			then-layer = <4>;
+			if-layers = <1 2>;
+			then-layer = <3>;
 		};
 	};
 	

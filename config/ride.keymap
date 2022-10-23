@@ -15,7 +15,7 @@
 #define RISE 1
 #define LOWER 2
 #define NAVI 3
-#define COLEMAK_DH 4
+// #define COLEMAK_DH 4
 
 
 /*
@@ -78,8 +78,8 @@
 //                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE/LALT  | LOWER  | RALT  |
 			bindings = <
 	&kp ESC &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I &kp O &kp P &kp BSPC
-	&kp LSHFT &kp A &kp S &kp D &kp F &kp G                                              &kp H &kp J  &kp K &kp L &kp SEMI &kp SQT
-	&kp TAB &kp Z &kp X &kp C &kp V &kp B                                                &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
+	&kp LSHFT &kp A &kp S &kp D &kp F &kp G                                              &kp H &kp J  &kp K &kp L &kp SEMI &mt RSHIFT SQT
+	&kp TAB &kp Z &kp X &kp C &kp V &kp B                                                &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
 	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
 			>;
 		};
@@ -106,7 +106,7 @@
 //                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE/LALT  | LOWER  | RALT  |
 			bindings = <
 	&kp ESC &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT                                  &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-	&kp LSHFT &kp A &kp S &kp D &kp F &kp CAPSLOCK                                       &kp MINUS &kp EQUAL &kp LBRC &kp RBRC &kp PIPE &kp SQT
+	&kp LSHFT &kp A &kp S &kp D &kp F &kp CAPSLOCK                                       &kp MINUS &kp EQUAL &kp LBRC &kp RBRC &kp PIPE  &mt LALT SPACE
 	&kp TILDE &kp Z &kp X &kp C &kp V &kp B                                              &kp UNDER &kp PLUS &kp LBKT &kp RBKT &kp BSLH &kp RCTRL
 	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
 			>;
@@ -120,24 +120,24 @@
 //                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE/LALT  | LOWER  | RALT  |
 			bindings = <
 	&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6
-	&trans &trans &tog DEFAULT &tog COLEMAK_DH &bt BT_CLR &out OUT_TOG         &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+	&trans &trans &tog DEFAULT &trans &bt BT_CLR &out OUT_TOG         &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
 	&trans &trans &trans &trans &trans &trans                                  &trans &kp C_PREV &kp C_PP &kp C_NEXT &trans &trans
 	                         &trans &mo RISE &trans &trans       &trans  &trans  &mo LOWER &trans
 			>;
 		};
 
-		colemak_dh {
-// ----------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  F   |  P   |  B   |                                          |  J   |  L    |  U    |  Y   |   ;   | BSCP |
-// | SHIFT |  A  |  R  |  S   |  T   |  G   |                                          |  M   |  N    |  E    |  I   |   O   |   '  |
-// | TAB   |  Z  |  X  |  C   |  D   |  V   |                                          |  K   |  H    |  ,    |  .   |   /   | SHIFT |
-//                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE/LALT  | LOWER  | RALT  |
-			bindings = <
-	&kp ESC &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U &kp Y &kp SEMI &kp BSPC
-	&kp LSHFT &kp A &kp R &kp S &kp T &kp G                                              &kp M &kp N  &kp E &kp I &kp O &kp SQT
-	&kp TAB &kp Z &kp X &kp C &kp D &kp V                                                &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
-	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
-			>;
-		};
+// 		colemak_dh {
+// // ----------------------------------------------------------------------------------------------------------------------------------
+// // |  ESC  |  Q  |  W  |  F   |  P   |  B   |                                          |  J   |  L    |  U    |  Y   |   ;   | BSCP |
+// // | SHIFT |  A  |  R  |  S   |  T   |  G   |                                          |  M   |  N    |  E    |  I   |   O   |   '  |
+// // | TAB   |  Z  |  X  |  C   |  D   |  V   |                                          |  K   |  H    |  ,    |  .   |   /   | SHIFT |
+// //                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE/LALT  | LOWER  | RALT  |
+// 			bindings = <
+// 	&kp ESC &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U &kp Y &kp SEMI &kp BSPC
+// 	&kp LSHFT &kp A &kp R &kp S &kp T &kp G                                              &kp M &kp N  &kp E &kp I &kp O &kp SQT
+// 	&kp TAB &kp Z &kp X &kp C &kp D &kp V                                                &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
+// 	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
+// 			>;
+// 		};
 	};
 };

@@ -13,9 +13,10 @@
 #define CONFIG_ZMK_RGB_UNDERGLOW_HUE_START 168
 #define DEFAULT 0
 #define COLEMAK_DH 1
-#define RISE 2
-#define LOWER 3
-#define NAVI 4
+#define WINDOWS 2
+#define RISE 3
+#define LOWER 4
+#define NAVI 5
 
 
 /*
@@ -100,6 +101,20 @@
 	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
 			>;
 		};
+
+		windows_layer {
+// ----------------------------------------------------------------------------------------------------------------------------------
+// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   | BSCP |
+// | SHIFT |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
+// | TAB   |  Z  |  X  |  C   |  V   |  B   |                                          |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//                          | LCTRL  | RISE  |  SPACE  |   ENTER   |   |   LWIN  |  SPACE/LALT  | LOWER  | RALT  |
+			bindings = <
+	&kp ESC &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I &kp O &kp P &kp BSPC
+	&kp LSHFT &kp A &kp S &kp D &kp F &kp G                                              &kp H &kp J  &kp K &kp L &kp SEMI &mt RSHIFT SQT
+	&kp TAB &kp Z &kp X &kp C &kp V &kp B                                                &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
+	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
+			>;
+		};
    
       rise_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
@@ -137,7 +152,7 @@
 //                          |   | RISE  |    |    |   |    |    | LOWER  |   |
 			bindings = <
 	&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6
-	&trans &trans &tog DEFAULT &tog COLEMAK_DH &bt BT_CLR &out OUT_TOG         &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+	&trans &trans &tog WINDOWS &tog COLEMAK_DH &bt BT_CLR &out OUT_TOG         &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
 	&trans &trans &trans &trans &trans &trans                                  &trans &kp C_PREV &kp C_PP &kp C_NEXT &trans &trans
 	                         &trans &mo RISE &trans &trans       &trans  &trans  &mo LOWER &trans
 			>;

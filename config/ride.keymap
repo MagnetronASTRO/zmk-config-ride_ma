@@ -92,12 +92,12 @@
 // ----------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  F   |  P   |  B   |                                          |  J   |  L    |  U    |  Y   |   ;   | BSCP |
 // | SHIFT |  A  |  R  |  S   |  T   |  G   |                                          |  M   |  N    |  E    |  I   |   O   |   '  |
-// | TAB   |  Z  |  X  |  C   |  D   |  V   |                                          |  /   |  K    |  H    |  ,    |  .   | SHIFT |
+// | TAB   |  Z  |  X  |  C   |  D   |  V   |                                          |  K   |  H    |  ,    |  .   |   /   | SHIFT |
 //                          | LWIN  | RISE  |  SPACE  |   ENTER   |   |   ESC  |  SPACE/LALT  | LOWER  | RALT  |
 			bindings = <
 	&kp ESC &kp Q &kp W &kp F &kp P &kp B                                                &kp J &kp L  &kp U &kp Y &kp SEMI &kp BSPC
 	&kp LSHFT &kp A &kp R &kp S &kp T &kp G                                              &kp M &kp N  &kp E &kp I &kp O &kp SQT
-	&kp TAB &kp Z &kp X &kp C &kp D &kp V                                                &kp FSLH &kp K &kp H  &kp COMMA &kp DOT &kp RSHIFT
+	&kp TAB &kp Z &kp X &kp C &kp D &kp V                                                &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RSHIFT
 	                         &kp LCTRL &mo RISE &kp SPACE &kp ENTER        &kp LWIN  &mt LALT SPACE  &mo LOWER &kp RALT
 			>;
 		};

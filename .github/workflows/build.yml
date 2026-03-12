@@ -2,6 +2,9 @@ on: [push, pull_request, workflow_dispatch]
 
 name: Build
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   matrix:
     runs-on: ubuntu-latest
@@ -32,14 +35,15 @@ jobs:
       - name: Prepare variables
         id: variables
         run: |
+          BOARD_SAFE=$(echo "${{ matrix.board }}" | sed 's|//.*||' | tr '/' '-')
           if [ -n "${{ matrix.shield }}" ]; then
             EXTRA_CMAKE_ARGS="-DSHIELD=${{ matrix.shield }}"
-            ARTIFACT_NAME="${{ matrix.shield }}-${{ matrix.board }}-zmk"
+            ARTIFACT_NAME="${{ matrix.shield }}-${BOARD_SAFE}-zmk"
             DISPLAY_NAME="${{ matrix.shield }} - ${{ matrix.board }}"
           else
             EXTRA_CMAKE_ARGS=
             DISPLAY_NAME="${{ matrix.board }}"
-            ARTIFACT_NAME="${{ matrix.board }}-zmk"
+            ARTIFACT_NAME="${BOARD_SAFE}-zmk"
           fi
           echo "extra-cmake-args=${EXTRA_CMAKE_ARGS}" >> "$GITHUB_OUTPUT"
           echo "artifact-name=${ARTIFACT_NAME}" >> "$GITHUB_OUTPUT"
@@ -71,7 +75,7 @@ jobs:
       - name: West Build (${{ steps.variables.outputs.display-name }})
         run: |
           west build -s zmk/app -b ${{ matrix.board }} -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config ${{ steps.variables.outputs.extra-cmake-args }} ${{ matrix.cmake-args }}
-          
+
       - name: ${{ steps.variables.outputs.display-name }} Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename artifacts

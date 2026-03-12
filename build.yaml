@@ -16,4 +16,4 @@ include:
   - board: nice_nano//zmk
     shield: ride_left
   - board: nice_nano//zmk
-    shield: ride_right#
+    shield: ride_right

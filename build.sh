@@ -17,10 +17,10 @@ docker run --rm -v "$(pwd)":$WORKDIR -w $WORKDIR $DOCKER_IMAGE \
     bash -c "
     west zephyr-export &&
     echo '==> Building ride_left...' &&
-    west build -s zmk/app -b nice_nano -d build/left -p -- \
+    west build -s zmk/app -b nice_nano//zmk -d build/left -p -- \
       -DSHIELD=ride_left -DZMK_CONFIG=$WORKDIR/config &&
     echo '==> Building ride_right...' &&
-    west build -s zmk/app -b nice_nano -d build/right -p -- \
+    west build -s zmk/app -b nice_nano//zmk -d build/right -p -- \
       -DSHIELD=ride_right -DZMK_CONFIG=$WORKDIR/config
   "
 

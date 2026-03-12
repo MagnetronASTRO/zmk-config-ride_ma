@@ -8,19 +8,18 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/led/led.h>
 
-#define DEFAULT 0
-#define COLEMAK_DH 1
-#define WINDOWS 2
-#define RISE 3
-#define LOWER 4
-#define NAVI 5
+#define DEFAULT 0 // Default/base layer
+#define COLEMAK_DH 1 // layer with custom colemak_dh key layout
+#define WINDOWS 2 // layer with swaped keys for windows SYSTEM/WIN/CMD <-> CTRL
+#define RISE 3 // rise layer consists of number in top row, arrows, action and control keys
+#define LOWER 4 // lower layer consists of special chars
+#define NAVI 5 // navi_layer, bluetooth controls, function keys(F1, F2 etc.), play control, output toogle to cable/wireless
 
 / {
-	behaviors {
-		compatible = "zmk,behavior-press";
-	};
+	// behaviors {
+	// 	compatible = "zmk,behavior-press";
+	// };
 
 	conditional_layers {
 		compatible = "zmk,conditional-layers";
@@ -36,14 +35,14 @@
 		default_layer {
 // ----------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  Q  |  W  |  E   |  R   |  T   |                                          |  Y   |  U    |  I    |  O   |   P   | BSCP |
-// | SHIFT |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   |   '  |
-// | TAB   |  Z  |  X  |  C   |  V   |  B   |                                          |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+// | SHIFT |  A  |  S  |  D   |  F   |  G   |                                          |  H   |  J    |  K    |  L   |   ;   | '/SHFT |
+// | TAB   |  Z  |  X  |  C   |  V   |  B   |                                          |  N   |  M    |  ,    |  .   |   /   | RCTRL |
 //                          | LWIN  | RISE  |  SPACE  |   ENTER   |   |   LCTRL  |  SPACE/LALT  | LOWER  | RALT  |
 			bindings = <
 	&kp ESC &kp Q &kp W &kp E &kp R &kp T                                                &kp Y &kp U  &kp I &kp O &kp P &kp BSPC
 	&kp LSHFT &kp A &kp S &kp D &kp F &kp G                                              &kp H &kp J  &kp K &kp L &kp SEMI &mt RSHIFT SQT
 	&kp TAB &kp Z &kp X &kp C &kp V &kp B                                                &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RCTRL
-	                         &kp LWIN &mo RISE &kp SPACE &kp ENTER        &kp LCTRL  &mt LALT SPACE  &mo LOWER &kp RALT
+							  &kp LWIN &mo RISE &kp SPACE &kp ENTER        &kp LCTRL  &mt LALT SPACE  &mo LOWER &kp RALT
 			>;
 		};
 
@@ -106,7 +105,7 @@
 			navi_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // | --- |BT_D1 |BT_D2 |BT_D3 |BT_D4 |BT_D5 |                                    | F1  | F2  | F3  | F4  | F5 | F6 |
-// | - | - | DEFAULT | COLEMAK_DH | BT_clear | out_toggle |                      | F7  | F8 | F9 | F10 | F11 | F12 |
+// | - | - | WIN| COLEMAK_DH | BT_clear | out_toggle |                      | F7  | F8 | F9 | F10 | F11 | F12 |
 // | --- | --- | --- | ---  | ---  |  --- |                                      | --- | previous | play/pause | next | --- | ---|
 //                          |   | RISE  |    |    |   |    |    | LOWER  |   |
 			bindings = <

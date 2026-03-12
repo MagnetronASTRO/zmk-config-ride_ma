@@ -76,7 +76,7 @@
    
       rise_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  F12  |  1  |  2    |  3  |  4     |  5 |                                          |  6   |  7    |  8    |  9   |   10  | BSCP |
+// |  F12  |  1  |  2    |  3  |  4     |  5 |                                          |  6   |  7    |  8    |  9   |   0   | BSCP |
 // | SHIFT |  A  |INSERT | HOME| PGUP   |  G |                                          | LEFT | DOWN  |  UP   | RIGHT|   ;   |   '  |
 // | `/~   |  Z  |DELETE | END | PGDOWN |  B |                                          |  N   |  M    |  ,    |  .   |   \   | CTRL |
 //                          | LWIN  | RISE  |  SPACE   |   ENTER   |   |   LCTRL  |  SPACE/LALT  | LOWER  | RALT  |
@@ -88,7 +88,7 @@
 			>;
 		};
 
-      lower_layer {
+    	lower_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ESC  |  !  |  @  |  #   |  $   |  %     |                                       |  ^   |  &    |  *    |  (   |   )   | BSCP |
 // | SHIFT |  A  |  S  |  D   |  F   |CAPSLOCK|                                       |  -   |  =    |  {    |  }   |   |   |   '  |
@@ -96,22 +96,22 @@
 //                          | LWIN  | RISE  |  SPACE  |   ENTER   |   |   LCTRL  |  SPACE/LALT  | LOWER  | RALT  |
 			bindings = <
 	&kp ESC &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT                                  &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-	&kp LSHFT &kp A &kp S &kp D &kp F &kp CAPSLOCK                                       &kp MINUS &kp EQUAL &kp LBRC &kp RBRC &kp PIPE  &mt LALT SPACE
+	&kp LSHFT &kp A &kp S &kp D &kp F &kp CAPSLOCK                                       &kp MINUS &kp EQUAL &kp LBRC &kp RBRC &kp PIPE  &kp SQT
 	&kp TILDE &kp Z &kp X &kp C &kp V &kp B                                              &kp UNDER &kp PLUS &kp LBKT &kp RBKT &kp BSLH &kp RCTRL
 	                         &kp LWIN &mo RISE &kp SPACE &kp ENTER        &kp LCTRL  &mt LALT SPACE  &mo LOWER &kp RALT
 			>;
 		};
 
-			navi_layer {
+		navi_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// | --- |BT_D1 |BT_D2 |BT_D3 |BT_D4 |BT_D5 |                                    | F1  | F2  | F3  | F4  | F5 | F6 |
-// | - | - | WIN| COLEMAK_DH | BT_clear | out_toggle |                      | F7  | F8 | F9 | F10 | F11 | F12 |
-// | --- | --- | --- | ---  | ---  |  --- |                                      | --- | previous | play/pause | next | --- | ---|
-//                          |   | RISE  |    |    |   |    |    | LOWER  |   |
+// | - | C_BRI_DOWN | C_BRI_UP | mission ctl | spotlight  | --- |       | --- | previous | play/pause | next | vol down | vol up |  
+// | -  | - | WIN | COLEMAK_DH | BT_clear | out_toggle |                | F1  | F2  | F3  | F4  | F5 | F6 | 
+// | -  |BT_D1 |BT_D2 |BT_D3 |BT_D4 |BT_D5 |                            | F7  | F8 | F9 | F10 | F11 | F12 |
+//                         				     |   | RISE  |    |    |   |    |    | LOWER  |   |
 			bindings = <
-	&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6
-	&trans &trans &tog WINDOWS &tog COLEMAK_DH &bt BT_CLR &out OUT_TOG         &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-	&trans &trans &trans &trans &trans &trans                                  &trans &kp C_PREV &kp C_PP &kp C_NEXT &trans &trans
+	&trans &kp C_BRI_DN &kp C_BRI_UP &kp LC(UP) &kp LG(SPACE) &trans         &trans &kp C_PREV &kp C_PP &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP      
+	&trans &trans &tog WINDOWS &tog COLEMAK_DH &bt BT_CLR &out OUT_TOG         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6
+	&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
 	                         &trans &mo RISE &trans &trans       &trans  &trans  &mo LOWER &trans
 			>;
 		};
